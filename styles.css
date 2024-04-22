@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
 /* Header styling */
 header {
     background-color: #333;
@@ -12,18 +13,22 @@ header {
     text-align: center;
     padding: 1rem;
 }
+
 /* Main content styling */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
+
 /* Image slideshow */
 .slideshow {
     display: flex;
     overflow: hidden;
-    height: 300px; /* Adjust this value based on the height of your images */
+    height: 300px;
+    margin-bottom: 20px; /* Add space below the slideshow */
 }
+
 .slideshow .slide {
     flex: 0 0 auto;
     opacity: 0;
@@ -31,19 +36,24 @@ header {
     height: auto;
     transition: opacity 1s ease-in-out;
 }
+
 .slideshow .slide.active {
     opacity: 1;
 }
+
 /* Styling for the new graphic design section */
 .graphic-design {
     background-color: #fff;
     padding: 1rem;
-    margin: 1rem 0;
+    margin-top: 20px; /* Add space above the section */
+    margin-bottom: 20px; /* Add space below the section */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .graphic-design h2 {
     color: #333;
 }
+
 .graphic-design p {
     color: #666;
 }
