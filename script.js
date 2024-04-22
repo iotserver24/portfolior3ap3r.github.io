@@ -1,24 +1,28 @@
 window.onload = function() {
     let slides = document.querySelectorAll('.slideshow .slide');
     let currentSlide = 0;
-    let isPaused = false;
 
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
         if (currentSlide === Math.floor(slides.length / 2)) {
-            isPaused = true; // Pause the slideshow when an image is in the center
-            setTimeout(() => {
-                isPaused = false; // Continue after 1.5 seconds
-            }, 1500);
+            pauseSlideshow(); // Pause the slideshow when an image is in the center
         }
     }
 
-    slides[currentSlide].classList.add('active');
-    setInterval(() => {
-        if (!isPaused) {
-            nextSlide();
-        }
-    }, 1500); // Change slide every 1.5 seconds
+    function pauseSlideshow() {
+        clearInterval(slideshowInterval); // Clear the interval to pause the slideshow
+        setTimeout(() => {
+            slideshowInterval = setInterval(nextSlide, 1500); // Continue after 1.5 seconds
+        }, 1500);
+    }
+
+    let slideshowInterval = setInterval(nextSlide, 1500); // Start the slideshow
+
+    // Optional: Resume the slideshow if the user interacts with the page
+    document.addEventListener('click', () => {
+        clearInterval(slideshowInterval);
+        slideshowInterval = setInterval(nextSlide, 1500);
+    });
 }
