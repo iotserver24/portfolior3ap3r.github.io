@@ -2,17 +2,18 @@ window.onload = function() {
     let slides = document.querySelectorAll('.slideshow .slide');
     let currentSlide = 0;
     let isPaused = false;
+    let imagesLoaded = 0;
 
     // Preload all images
-    let imagesLoaded = 0;
     slides.forEach(slide => {
-        slide.addEventListener('load', () => {
+        let image = new Image();
+        image.onload = () => {
             imagesLoaded++;
             if (imagesLoaded === slides.length) {
                 activateSlide(currentSlide); // Start the slideshow when all images are loaded
             }
-        });
-        slide.src = slide.getAttribute('data-src'); // Load image from data-src attribute
+        };
+        image.src = slide.getAttribute('src');
     });
 
     function activateSlide(index) {
