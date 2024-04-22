@@ -3,6 +3,18 @@ window.onload = function() {
     let currentSlide = 0;
     let isPaused = false;
 
+    // Preload all images
+    let imagesLoaded = 0;
+    slides.forEach(slide => {
+        slide.addEventListener('load', () => {
+            imagesLoaded++;
+            if (imagesLoaded === slides.length) {
+                activateSlide(currentSlide); // Start the slideshow when all images are loaded
+            }
+        });
+        slide.src = slide.getAttribute('data-src'); // Load image from data-src attribute
+    });
+
     function activateSlide(index) {
         slides[index].classList.add('active');
         if (!isPaused) {
@@ -32,6 +44,4 @@ window.onload = function() {
             }
         });
     });
-
-    activateSlide(currentSlide); // Start the slideshow
 }
