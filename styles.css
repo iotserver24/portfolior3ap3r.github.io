@@ -20,14 +20,15 @@ header {
 }
 /* Image slideshow */
 .slideshow {
-    position: relative;
+    display: flex;
+    overflow: hidden;
     height: 300px; /* Adjust this value based on the height of your images */
 }
 .slideshow .slide {
-    position: absolute;
-    max-width: 100%;
-    height: auto;
+    flex: 0 0 auto;
     opacity: 0;
+    width: 100%;
+    height: auto;
     transition: opacity 1s ease-in-out;
 }
 .slideshow .slide.active {
