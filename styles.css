@@ -46,3 +46,27 @@ header {
 .graphic-design p {
     color: #666;
 }
+
+/* CSS for desktops and larger screens */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+    /* Add more styles for larger screens here */
+}
+
+/* CSS for tablets and medium-sized screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        font-size: 16px;
+    }
+    /* Add more styles for medium screens here */
+}
+
+/* CSS for mobile and small screens */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+    /* Add more styles for small screens here */
+}
