@@ -21,7 +21,7 @@ header {
 /* Image slideshow */
 .slideshow {
     position: relative;
-    max-height: 300px;
+    height: 300px; /* Adjust this value based on the height of your images */
 }
 .slideshow .slide {
     position: absolute;
