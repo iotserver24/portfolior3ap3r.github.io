@@ -26,6 +26,7 @@ header {
 .slideshow .slide {
     position: absolute;
     width: 100%;
+    max-height: 100%; /* Add this line */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
